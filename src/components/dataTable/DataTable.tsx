@@ -5,6 +5,7 @@ import {
 } from "@mui/x-data-grid";
 import "./dataTable.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 // import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
 };
 
 const DataTable = (props: Props) => {
-
+  const [data, setData] = useState(props.rows);  
   // TEST THE API
 
   // const queryClient = useQueryClient();
@@ -31,8 +32,16 @@ const DataTable = (props: Props) => {
 
   const handleDelete = (id: number) => {
     //delete the item
+    console.log("...,",id);
+
     // mutation.mutate(id)
-  };
+    const newData = data.filter((row) => (row as { id: number }).id !== id);
+    const updatedData = newData.map((row, index) => ({
+      ...row,
+      id: index + 1,
+    }));
+    setData(updatedData); 
+  };  
 
   const actionColumn: GridColDef = {
     field: "action",
@@ -56,7 +65,7 @@ const DataTable = (props: Props) => {
     <div className="dataTable">
       <DataGrid
         className="dataGrid"
-        rows={props.rows}
+        rows={data}
         columns={[...props.columns, actionColumn]}
         initialState={{
           pagination: {
