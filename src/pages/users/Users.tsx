@@ -28,12 +28,21 @@ const columns: GridColDef[] = [
     headerName: "Last name",
     width: 150,
   },
+
+  {
+    field: "age",
+    type: "string",
+    headerName: "Age",
+    width: 100,
+  },
+
   {
     field: "email",
     type: "string",
     headerName: "Email",
     width: 200,
   },
+ 
   {
     field: "phone",
     type: "string",
@@ -73,14 +82,7 @@ const Users = () => {
         <h1>Users</h1>
         <button onClick={() => setOpen(true)}>Add New User</button>
       </div>
-      <DataTable slug="users" columns={columns} rows={userRows} />
-      {/* TEST THE API */}
-
-      {/* {isLoading ? (
-        "Loading..."
-      ) : (
-        <DataTable slug="users" columns={columns} rows={data} />
-      )} */}
+      {<DataTable slug="users" columns={columns} rows={userRows} />}
       {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
     </div>
   );

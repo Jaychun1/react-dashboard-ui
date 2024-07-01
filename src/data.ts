@@ -147,6 +147,7 @@ export const topDealUsers = [
     age: 26,
     email: "adeline@gmail.com",
     amount: "2.512",
+    verified: true,
   },
   {
     id: 5,
