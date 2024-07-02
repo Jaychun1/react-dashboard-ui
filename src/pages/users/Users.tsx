@@ -12,6 +12,7 @@ const columns: GridColDef[] = [
     field: "img",
     headerName: "Avatar",
     width: 100,
+    editable: true,
     renderCell: (params) => {
       return <img src={params.row.img || "/noavatar.png"} alt="" />;
     },
@@ -21,12 +22,14 @@ const columns: GridColDef[] = [
     type: "string",
     headerName: "First name",
     width: 150,
+    editable: true,
   },
   {
     field: "lastName",
     type: "string",
     headerName: "Last name",
     width: 150,
+    editable: true,
   },
 
   {
@@ -41,6 +44,8 @@ const columns: GridColDef[] = [
     type: "string",
     headerName: "Email",
     width: 200,
+    editable: true,
+
   },
  
   {
