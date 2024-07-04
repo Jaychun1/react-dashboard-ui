@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    .settings-menu {
+        color: $main-color;
+        padding: 10px;
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+
+        &.light {
+            background-color: $main-bg;
+            color: $main-color;
+        } 
+        
+        &.dark {
+            background-color: $dark-bg;
+            color: $dark-color;
+        }
+
+        label,
+        select {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .MuiInputBase-root {
+            color: white;
+
+            .MuiOutlinedInput-notchedOutline {
+                border-color: transparent;
+            }
+
+            &:hover .MuiOutlinedInput-notchedOutline {
+                border-color: transparent;
+            }
+
+            &.Mui-focused .MuiOutlinedInput-notchedOutline {
+                border-color: transparent;
+            }
+
+            .MuiSvgIcon-root {
+                color: white;
+            }
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+}

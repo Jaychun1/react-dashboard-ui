@@ -14,8 +14,18 @@ a {
 
 .main {
   font-family: "Inter", sans-serif;
-  background-color: $main-bg;
-  color: $main-color;
+
+  &.light {
+    background-color: $main-bg;
+    color: $main-color;
+  } 
+  
+
+  &.dark {
+    background-color: $dark-bg; 
+    color: $dark-color; 
+  }
+
 }
 
 .container {
